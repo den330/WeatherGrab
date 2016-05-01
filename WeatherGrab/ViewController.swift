@@ -9,17 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var weatherLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    @IBAction func refresh() {
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
 
