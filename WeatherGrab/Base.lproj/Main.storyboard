@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Weather Grab View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherGrab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WeatherGrabViewController" customModule="WeatherGrab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jjh-OC-aTx"/>
                         <viewControllerLayoutGuide type="bottom" id="cFU-2p-GjH"/>
@@ -65,9 +65,9 @@
                             <constraint firstItem="Ey1-QJ-tys" firstAttribute="leading" secondItem="gyg-Ph-zcM" secondAttribute="trailing" constant="8" symbolic="YES" id="Ra3-wa-x8H"/>
                             <constraint firstItem="qtz-Kh-WED" firstAttribute="baseline" secondItem="gyg-Ph-zcM" secondAttribute="baseline" id="SNn-rq-OD6"/>
                             <constraint firstItem="lLU-t7-ZX4" firstAttribute="top" secondItem="jjh-OC-aTx" secondAttribute="bottom" constant="26" id="Vjp-Ir-QaY"/>
-                            <constraint firstItem="cFe-aG-2gE" firstAttribute="width" secondItem="Ey1-QJ-tys" secondAttribute="width" id="aP2-1z-3Dv"/>
                             <constraint firstItem="gyg-Ph-zcM" firstAttribute="leading" secondItem="qtz-Kh-WED" secondAttribute="trailing" constant="50" id="b9T-Gl-8rR"/>
                             <constraint firstItem="cFU-2p-GjH" firstAttribute="top" secondItem="4NG-Cx-35N" secondAttribute="bottom" constant="98" id="g58-N6-GF6"/>
+                            <constraint firstItem="cFe-aG-2gE" firstAttribute="width" secondItem="Ey1-QJ-tys" secondAttribute="width" id="jnt-N1-0M1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ey1-QJ-tys" secondAttribute="trailing" id="jrK-JT-dXV"/>
                             <constraint firstItem="Ey1-QJ-tys" firstAttribute="bottom" secondItem="gyg-Ph-zcM" secondAttribute="bottom" id="o28-Gj-fbL"/>
                             <constraint firstItem="qtz-Kh-WED" firstAttribute="leading" secondItem="cFe-aG-2gE" secondAttribute="trailing" constant="8" symbolic="YES" id="oVr-ke-VbC"/>

@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		901A372B1CD652FE009D12C6 /* LocationGrabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901A372A1CD652FE009D12C6 /* LocationGrabController.swift */; };
 		90F1443D1CD5499400B35F94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1443C1CD5499400B35F94 /* AppDelegate.swift */; };
-		90F1443F1CD5499400B35F94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1443E1CD5499400B35F94 /* ViewController.swift */; };
+		90F1443F1CD5499400B35F94 /* WeatherGrabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1443E1CD5499400B35F94 /* WeatherGrabViewController.swift */; };
 		90F144421CD5499400B35F94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90F144401CD5499400B35F94 /* Main.storyboard */; };
 		90F144441CD5499400B35F94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90F144431CD5499400B35F94 /* Assets.xcassets */; };
 		90F144471CD5499400B35F94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90F144451CD5499400B35F94 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		901A372A1CD652FE009D12C6 /* LocationGrabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationGrabController.swift; sourceTree = "<group>"; };
 		90F144391CD5499400B35F94 /* WeatherGrab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherGrab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F1443C1CD5499400B35F94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		90F1443E1CD5499400B35F94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		90F1443E1CD5499400B35F94 /* WeatherGrabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherGrabViewController.swift; sourceTree = "<group>"; };
 		90F144411CD5499400B35F94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90F144431CD5499400B35F94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90F144461CD5499400B35F94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				90F1443C1CD5499400B35F94 /* AppDelegate.swift */,
-				90F1443E1CD5499400B35F94 /* ViewController.swift */,
+				90F1443E1CD5499400B35F94 /* WeatherGrabViewController.swift */,
+				901A372A1CD652FE009D12C6 /* LocationGrabController.swift */,
 				90F144401CD5499400B35F94 /* Main.storyboard */,
 				90F144431CD5499400B35F94 /* Assets.xcassets */,
 				90F144451CD5499400B35F94 /* LaunchScreen.storyboard */,
@@ -136,7 +139,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90F1443F1CD5499400B35F94 /* ViewController.swift in Sources */,
+				90F1443F1CD5499400B35F94 /* WeatherGrabViewController.swift in Sources */,
+				901A372B1CD652FE009D12C6 /* LocationGrabController.swift in Sources */,
 				90F1443D1CD5499400B35F94 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +297,7 @@
 				90F1444D1CD5499400B35F94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

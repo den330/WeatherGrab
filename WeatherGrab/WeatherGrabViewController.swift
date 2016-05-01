@@ -8,14 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WeatherGrabViewController: UIViewController {
     
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
+    let Location = LocationGrabController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Location.getLocation()
     }
     
     @IBAction func refresh() {
