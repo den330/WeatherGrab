@@ -12,6 +12,26 @@ import Foundation
 class LocationGrabController: NSObject, CLLocationManagerDelegate{
     
     let locationManager = CLLocationManager()
+    var location: CLLocation?
+    var lastLocationError: NSError?
+    let geocoder = CLGeocoder()
+    var placemark: CLPlacemark?
+    var lastGeocodingError: NSError?
+    
+    func clear(){
+        location = nil
+        lastGeocodingError = nil
+        lastGeocodingError = nil
+        placemark = nil
+    }
+    
+    func startLocationManager(){
+        clear()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        locationManager.startUpdatingLocation()
+    }
+    
     
     
     func getLocation(){
@@ -20,18 +40,56 @@ class LocationGrabController: NSObject, CLLocationManagerDelegate{
             locationManager.requestWhenInUseAuthorization()
             return
         }
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.startUpdatingLocation()
+        startLocationManager()
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("sth wrong \(error)")
+        if error.code == CLError.LocationUnknown.rawValue{
+            print("unknown")
+            return
+        }
+        lastLocationError = error
+        stopLocationManager()
+    }
+    
+    func stopLocationManager(){
+        locationManager.stopUpdatingLocation()
+        locationManager.delegate = nil
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation = locations.last!
-        print("didUpdate \(newLocation)")
+        
+        if location == nil || location!.horizontalAccuracy >= newLocation.horizontalAccuracy{
+            lastLocationError = nil
+            location = newLocation
+            if newLocation.horizontalAccuracy <= locationManager.desiredAccuracy{
+                stopLocationManager()
+                geocoder.reverseGeocodeLocation(location!, completionHandler: {
+                    placemarks, error in
+                    self.lastGeocodingError = error
+                    if error == nil, let p = placemarks where !p.isEmpty{
+                        self.placemark = p.last!
+                        let city = self.stringFromPlacemark(self.placemark!)
+                        print(city)
+                    }else{
+                        self.placemark = nil
+                    }
+                })
+            }
+        }
     }
+    
+    func stringFromPlacemark(placemark: CLPlacemark) -> String{
+        var cityName = ""
+        if let s = placemark.locality{
+            cityName = s
+        }else{
+            cityName = "unknown"
+        }
+        return cityName
+    }
+    
+    
     
 }

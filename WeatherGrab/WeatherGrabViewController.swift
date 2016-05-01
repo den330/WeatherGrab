@@ -21,8 +21,7 @@ class WeatherGrabViewController: UIViewController {
     }
     
     @IBAction func refresh() {
-    
-
+        Location.getLocation()
     }
 }
 
