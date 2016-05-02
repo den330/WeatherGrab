@@ -9,7 +9,15 @@
 import CoreLocation
 import Foundation
 
+
+protocol cityDelegate {
+    func showCity(city: String?)
+}
+
+
 class LocationGrabController: NSObject, CLLocationManagerDelegate{
+    
+    var delegate: cityDelegate?
     
     let locationManager = CLLocationManager()
     var location: CLLocation?
@@ -17,12 +25,14 @@ class LocationGrabController: NSObject, CLLocationManagerDelegate{
     let geocoder = CLGeocoder()
     var placemark: CLPlacemark?
     var lastGeocodingError: NSError?
+    var city: String?
     
     func clear(){
         location = nil
         lastGeocodingError = nil
-        lastGeocodingError = nil
+        lastLocationError = nil
         placemark = nil
+        city = nil
     }
     
     func startLocationManager(){
@@ -71,7 +81,8 @@ class LocationGrabController: NSObject, CLLocationManagerDelegate{
                     if error == nil, let p = placemarks where !p.isEmpty{
                         self.placemark = p.last!
                         let city = self.stringFromPlacemark(self.placemark!)
-                        print(city)
+                        self.city = city
+                        self.delegate?.showCity(self.city)
                     }else{
                         self.placemark = nil
                     }

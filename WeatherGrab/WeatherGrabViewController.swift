@@ -8,20 +8,36 @@
 
 import UIKit
 
-class WeatherGrabViewController: UIViewController {
+class WeatherGrabViewController: UIViewController, cityDelegate{
     
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     let Location = LocationGrabController()
+    var cityName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Location.getLocation()
+        Location.delegate = self
+        refresh()
     }
     
     @IBAction func refresh() {
         Location.getLocation()
     }
+    
+    func showCity(city: String?) {
+        cityName = city
+        updateLabel()
+    }
+    
+    func updateLabel(){
+        if let city = cityName{
+            cityLabel.text = city
+        }else{
+            cityLabel.text = "Unknown"
+        }
+    }
+    
 }
 
