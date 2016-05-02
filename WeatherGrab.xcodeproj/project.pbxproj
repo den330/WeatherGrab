@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		901A372B1CD652FE009D12C6 /* LocationGrabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901A372A1CD652FE009D12C6 /* LocationGrabController.swift */; };
+		9083D8BA1CD7E5E9008B5A9A /* NetworkGrab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9083D8B91CD7E5E9008B5A9A /* NetworkGrab.swift */; };
 		90F1443D1CD5499400B35F94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1443C1CD5499400B35F94 /* AppDelegate.swift */; };
 		90F1443F1CD5499400B35F94 /* WeatherGrabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1443E1CD5499400B35F94 /* WeatherGrabViewController.swift */; };
 		90F144421CD5499400B35F94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90F144401CD5499400B35F94 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		901A372A1CD652FE009D12C6 /* LocationGrabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationGrabController.swift; sourceTree = "<group>"; };
+		9083D8B91CD7E5E9008B5A9A /* NetworkGrab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkGrab.swift; sourceTree = "<group>"; };
 		90F144391CD5499400B35F94 /* WeatherGrab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherGrab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F1443C1CD5499400B35F94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90F1443E1CD5499400B35F94 /* WeatherGrabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherGrabViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				90F1443C1CD5499400B35F94 /* AppDelegate.swift */,
 				90F1443E1CD5499400B35F94 /* WeatherGrabViewController.swift */,
+				9083D8B91CD7E5E9008B5A9A /* NetworkGrab.swift */,
 				901A372A1CD652FE009D12C6 /* LocationGrabController.swift */,
 				90F144401CD5499400B35F94 /* Main.storyboard */,
 				90F144431CD5499400B35F94 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 			files = (
 				90F1443F1CD5499400B35F94 /* WeatherGrabViewController.swift in Sources */,
 				901A372B1CD652FE009D12C6 /* LocationGrabController.swift in Sources */,
+				9083D8BA1CD7E5E9008B5A9A /* NetworkGrab.swift in Sources */,
 				90F1443D1CD5499400B35F94 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

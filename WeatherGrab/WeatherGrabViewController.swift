@@ -8,12 +8,13 @@
 
 import UIKit
 
-class WeatherGrabViewController: UIViewController, cityDelegate{
+class WeatherGrabViewController: UIViewController, cityDelegate, networkDelegate{
     
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     let Location = LocationGrabController()
+    var network: NetworkGrab?
     var cityName: String?
     
     override func viewDidLoad() {
@@ -22,22 +23,28 @@ class WeatherGrabViewController: UIViewController, cityDelegate{
         refresh()
     }
     
+    
     @IBAction func refresh() {
+        weatherLabel.text = "Loading..."
+        tempLabel.text = "Loading..."
         Location.getLocation()
     }
     
-    func showCity(city: String?) {
-        cityName = city
-        updateLabel()
+    func showLabel(description: String, degree: Int){
+        weatherLabel.text = description
+        tempLabel.text = String(degree)
     }
     
-    func updateLabel(){
-        if let city = cityName{
-            cityLabel.text = city
-        }else{
-            cityLabel.text = "Unknown"
+    func showCity(city: String?) {
+        if let citylocation = city{
+            print(citylocation)
+            network = NetworkGrab(cityName: citylocation)
+            network!.delegate = self
+            cityLabel.text = citylocation
         }
     }
+    
+
     
 }
 
