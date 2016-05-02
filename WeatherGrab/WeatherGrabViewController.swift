@@ -32,12 +32,11 @@ class WeatherGrabViewController: UIViewController, cityDelegate, networkDelegate
     
     func showLabel(description: String, degree: Int){
         weatherLabel.text = description
-        tempLabel.text = String(degree)
+        tempLabel.text = "\(String(degree))℃"
     }
     
     func showCity(city: String?) {
         if let citylocation = city{
-            print(citylocation)
             network = NetworkGrab(cityName: citylocation)
             network!.delegate = self
             cityLabel.text = citylocation
