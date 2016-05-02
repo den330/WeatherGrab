@@ -82,7 +82,9 @@ class LocationGrabController: NSObject, CLLocationManagerDelegate{
                         self.placemark = p.last!
                         let city = self.stringFromPlacemark(self.placemark!)
                         self.city = city
-                        self.delegate?.showCity(self.city)
+                        dispatch_async(dispatch_get_main_queue()){
+                            self.delegate?.showCity(self.city)
+                        }
                     }else{
                         self.placemark = nil
                     }

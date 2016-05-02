@@ -25,8 +25,8 @@ class NetworkGrab{
     
     
     init(cityName: String){
-        city = cityName
-        let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=\(cityName)&APPID=\(apiKey)")
+        city = urlWithCityName(cityName)
+        let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=\(city!)&APPID=\(apiKey)")
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: configuration)
         let request = NSURLRequest(URL: url!)
@@ -37,7 +37,9 @@ class NetworkGrab{
                 let temp = Int(dictionary["main"]!["temp"]!! as! Double - 273.15)
                 self.description = description as! String
                 self.degree = temp
-                self.delegate?.showLabel(self.description, degree: self.degree)
+                dispatch_async(dispatch_get_main_queue()){
+                    self.delegate?.showLabel(self.description, degree: self.degree)
+                }
             })
         dataTask.resume()
     }
@@ -49,6 +51,10 @@ class NetworkGrab{
             print("Error JSON")
             return nil
         }
+    }
+    
+    func urlWithCityName(city: String) -> String{
+        return city.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
     }
     
     
