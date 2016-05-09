@@ -56,10 +56,4 @@ class NetworkGrab{
     func urlWithCityName(city: String) -> String{
         return city.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
     }
-    
-    
-    
-    
-    
-    
 }

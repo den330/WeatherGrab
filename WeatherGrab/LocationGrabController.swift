@@ -102,7 +102,4 @@ class LocationGrabController: NSObject, CLLocationManagerDelegate{
         }
         return cityName
     }
-    
-    
-    
 }
